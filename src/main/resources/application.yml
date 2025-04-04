@@ -1,0 +1,75 @@
+spring:
+  profiles:
+    active: prod  # Define 'dev' como perfil padr�o
+
+---
+# ? Configura��o para DESENVOLVIMENTO (banco de dados local no MySQL)
+spring:
+  config:
+    activate:
+      on-profile: dev
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/financial_control
+    username: root
+    password: gzuz777
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.MySQLDialect
+    open-in-view: false
+    show-sql: false  # true para Mostrar as queries no console,
+
+---
+# ? Configura��o para PRODU��O (usa vari�veis de ambiente)
+spring:
+  config:
+    activate:
+      on-profile: prod
+
+  datasource:
+    url: ${DATABASE_URL:jdbc:mysql://localhost:3306/prod_database?serverTimezone=UTC&useSSL=false}
+    username: ${DATABASE_USER:root}
+    password: ${DATABASE_PASSWORD:root}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.MySQLDialect
+    open-in-view: false
+    show-sql: false  # Desativa logs SQL em produ��o
+
+  server:
+    port: 8080
+
+---
+# ? Configura��o para TESTES (banco separado para testes)
+spring:
+  config:
+    activate:
+      on-profile: test
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/test_database?serverTimezone=UTC&useSSL=false
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.MySQLDialect
+    open-in-view: false
+    show-sql: true
+
+  #  server:
+  #    port: 8081  # Usa uma porta diferente para testes
+  server:
+  port: 8080
+  spring:
+  mvc:
+  dispatch-options-request: true
+
