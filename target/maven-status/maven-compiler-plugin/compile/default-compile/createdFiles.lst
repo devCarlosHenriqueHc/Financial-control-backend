@@ -1,0 +1,10 @@
+com\financialcontrol\config\CorsConfig$1.class
+com\financialcontrol\entities\TransactionEntity.class
+com\financialcontrol\controllers\TransactionController.class
+com\financialcontrol\mappers\TransactionMapper.class
+com\financialcontrol\services\TransactionService.class
+com\financialcontrol\dto\TransactionDTO.class
+com\financialcontrol\model\TransactionModel.class
+com\financialcontrol\repositories\TransactionRepository.class
+com\financialcontrol\config\CorsConfig.class
+com\financialcontrol\FinancialControlApplication.class
