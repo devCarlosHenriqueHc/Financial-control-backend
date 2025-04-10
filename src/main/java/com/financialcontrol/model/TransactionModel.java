@@ -13,8 +13,10 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 public class TransactionModel {
+
     private String description;
     private BigDecimal amount;
     private String type;
     private LocalDateTime createdAt;
+
 }

@@ -14,10 +14,11 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 public class TransactionDTO {
-    private UUID id;
 
+    private UUID id;
     private String description;
     private BigDecimal amount;
     private String type;
     private LocalDateTime createdAt;
+
 }

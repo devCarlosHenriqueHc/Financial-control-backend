@@ -1,6 +1,5 @@
 package com.financialcontrol.services;
 
-import com.financialcontrol.dto.TransactionDTO;
 import com.financialcontrol.entities.TransactionEntity;
 import com.financialcontrol.mappers.TransactionMapper;
 import com.financialcontrol.model.TransactionModel;
@@ -14,6 +13,7 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class TransactionService {
+
     private final TransactionRepository transactionRepository;
     private final TransactionMapper transactionMapper;
 
@@ -23,8 +23,9 @@ public class TransactionService {
         return transactionRepository.save(transactionEntity);
     }
 
-    // 🔥 Novo método para buscar todas as transações
+    // Novo método para buscar todas as transações
     public List<TransactionEntity> getAllTransactions() {
         return transactionRepository.findAll();
     }
+
 }

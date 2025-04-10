@@ -18,12 +18,13 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 public class TransactionEntity {
+
     @Id
     @GeneratedValue
     private UUID id;
-
     private String description;
     private BigDecimal amount;
     private String type;
     private LocalDateTime createdAt;
+
 }

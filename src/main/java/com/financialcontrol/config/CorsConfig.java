@@ -1,4 +1,4 @@
-package com.seupacote.config;
+package com.financialcontrol.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,10 +14,18 @@ public class CorsConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                        .allowedOrigins("https://financial-control-frontend-1h89.vercel.app")
+                        .allowedOrigins(
+                                "https://financial-control-frontend-1h89.vercel.app",
+                                "https://financial-control-frontend-1h89.vercel.app/",
+                                "https://financial-control-fron-git-7c619f-devcarloshenriquehcs-projects.vercel.app/",
+                                "https://financial-control-frontend-1h89-devcarloshenriquehcs-projects.vercel.app/",
+                                "https://financial-control-fron-git-7c619f-devcarloshenriquehcs-projects.vercel.app",
+                                "https://financial-control-frontend-1h89-devcarloshenriquehcs-projects.vercel.app"
+                        )
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*");
             }
         };
     }
+
 }

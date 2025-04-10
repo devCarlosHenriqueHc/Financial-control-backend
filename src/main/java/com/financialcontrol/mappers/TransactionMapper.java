@@ -30,8 +30,9 @@ public class TransactionMapper {
         return transactionDTO;
     }
 
-    // 🔥 Novo método para converter uma lista de entidades para uma lista de DTOs
+    // Novo método para converter uma lista de entidades para uma lista de DTOs
     public List<TransactionDTO> toDTOList(List<TransactionEntity> entities) {
         return entities.stream().map(this::toDTO).collect(Collectors.toList());
     }
+
 }

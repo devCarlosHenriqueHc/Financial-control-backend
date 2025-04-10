@@ -33,4 +33,5 @@ public class TransactionController {
         List<TransactionEntity> transactions = transactionService.getAllTransactions();
         return ResponseEntity.ok(transactionMapper.toDTOList(transactions));
     }
+
 }
