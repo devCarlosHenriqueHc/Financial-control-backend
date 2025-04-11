@@ -15,12 +15,7 @@ public class CorsConfig {
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
                         .allowedOrigins(
-                                "https://financial-control-frontend-1h89.vercel.app",
-                                "https://financial-control-frontend-1h89.vercel.app/",
-                                "https://financial-control-fron-git-7c619f-devcarloshenriquehcs-projects.vercel.app/",
-                                "https://financial-control-frontend-1h89-devcarloshenriquehcs-projects.vercel.app/",
-                                "https://financial-control-fron-git-7c619f-devcarloshenriquehcs-projects.vercel.app",
-                                "https://financial-control-frontend-1h89-devcarloshenriquehcs-projects.vercel.app"
+                                "https://financial-control-frontend.vercel.app"
                         )
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*");
