@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
@@ -23,9 +24,13 @@ public class TransactionService {
         return transactionRepository.save(transactionEntity);
     }
 
-    // Novo método para buscar todas as transações
+    // Buscar todas as transações
     public List<TransactionEntity> getAllTransactions() {
         return transactionRepository.findAll();
     }
 
+    // 🔥 Novo método para deletar transação
+    public void deleteTransaction(UUID id) {
+        transactionRepository.deleteById(id);
+    }
 }
